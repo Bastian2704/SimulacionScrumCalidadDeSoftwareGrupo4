@@ -42,7 +42,7 @@ class TestBuscarTarea(unittest.TestCase):
                 "fecha_vencimiento": datetime(2026, 12, 31).date()
             }
         
-        self.tareas_db["ZZ999"] = {
+        self.tareas_db["ZZ999"] = { 
             "id": "ZZ999",
             "titulo": "Evaluacion de rendimiento",
             "descripcion": "Prueba SPICE",
