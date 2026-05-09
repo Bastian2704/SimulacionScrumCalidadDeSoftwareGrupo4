@@ -4,6 +4,9 @@ import re
 from datetime import datetime
 from crearTareas import crearTarea
 from buscarTareaPorId import buscarTareaPorId, cargar_tareas
+from actualizarEstadoTarea import actualizarEstadoTarea
+from listarTareasPorPrioridad import listarTareasPorPrioridad
+from listarTareasProximasAVencer import listarTareasProximasAVencer
 
 # ARCHIVO = "tareas.pkl"
 
@@ -102,13 +105,17 @@ from buscarTareaPorId import buscarTareaPorId, cargar_tareas
 #         print("  └─────────────────────────────────")
 
 
+
 def mostrar_menu():
     print("\n=============================")
     print("     GESTOR DE TAREAS")
     print("=============================")
     print("  1. Crear tarea")
     print("  2. Buscar tarea por ID")
-    print("  3. Salir")
+    print("  3. Actualizar estado de tarea")
+    print("  4. Listar tareas por prioridad")
+    print("  5. Listar tareas próximas a vencer")
+    print("  6. Salir")
     print("=============================")
 
 
@@ -118,17 +125,23 @@ def main():
 
     while True:
         mostrar_menu()
-        opcion = input("Elige una opción (1-3): ").strip()
+        opcion = input("Elige una opción (1-6): ").strip()
 
         if opcion == "1":
             crearTarea(tareas)
         elif opcion == "2":
             buscarTareaPorId(tareas)
         elif opcion == "3":
+            actualizarEstadoTarea(tareas)
+        elif opcion == "4":
+            listarTareasPorPrioridad(tareas)
+        elif opcion == "5":
+            listarTareasProximasAVencer(tareas)
+        elif opcion == "6":
             print("\nHasta luego. 👋")
             break
         else:
-            print("  ✗ Opción inválida. Elige 1, 2 o 3.")
+            print("  ✗ Opción inválida. Elige entre 1 y 6.")
 
 
 if __name__ == "__main__":

@@ -55,12 +55,13 @@ def crearTarea(tareas):
             print("  ✗ Formato inválido. Usa YYYY-MM-DD (ej: 2025-12-31).")
 
     tareas[id_tarea] = {
-        "id": id_tarea,
-        "titulo": titulo,
-        "descripcion": descripcion,
-        "prioridad": prioridad,
-        "fecha_vencimiento": fecha,
-    }
+    "id": id_tarea,
+    "titulo": titulo,
+    "descripcion": descripcion,
+    "prioridad": prioridad,
+    "estado": "PENDIENTE",           # ← añadir esta línea
+    "fecha_vencimiento": fecha,
+}
 
     guardar_tareas(tareas)
     print(f"\n  ✓ Tarea '{titulo}' creada exitosamente con ID '{id_tarea}'.")
